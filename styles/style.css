@@ -172,7 +172,8 @@ body {
 
 /* header */
 .header-top {
-  padding: 13px 0;
+  padding: 11px 0;
+  padding-bottom: 13px;
   background-color: var(--basic-grey-bg);
 }
 
