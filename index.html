@@ -46,6 +46,45 @@
             <!-- Чтобы появился блок авторизованного пользователя, необходимо пунктам добавить класс logged и убрать класс unlogged-->
             <li class="login-item unlogged">
               <a class="login-item__link link login-item__link-entry" href="#">Войти</a>
+              <!-- чтобы появился поповер авторизации, нужно добавить класс popover-active-->
+              <form class="login popover" action="https://echo.htmlacademy.ru/" method="get">
+                <h2 class="login__title popover__title title">Личный кабинет</h2>
+                <button class="login__close popover__close btn" type="button">
+                  <span class="visually-hidden">Закрыть.</span>
+                </button>
+                <label class="visually-hidden" for="login-mail">Введите логин.</label>
+                <input class="login__input login__input-email input" type="email" name="email" id="login-mail"
+                  placeholder="Логин" required>
+                <label class="visually-hidden" for="login-password">Введите пароль.</label>
+                <input class="login__input login__input-password input" type="password" name="password"
+                  id="login-password" placeholder="Пароль" required>
+                <label class="login-remember" for="remember">
+                  <input class="visually-hidden login-remember__input" type="checkbox" name="remember" id="remember"
+                    checked>
+                  <span class="login-remember__mark"></span>
+                  <span class="login-remember__label">Запомнить меня</span>
+                </label>
+                <a class="login__link link-password link" href="#">Забыл пароль</a>
+                <button class="login__btn btn-green btn" type="submit">Войти</button>
+                <a class="login__link link-registration  popover__btn link" href="#">Регистрация</a>
+              </form>
+              <!-- чтобы появился поповер авторизованного пользователя, нужно добавить класс popover-active-->
+              <div class="loggedin popover popover-active">
+                <h2 class="loggedin__title popover__title title">Здравствуйте,<br>
+                  <span class="loggedin__name">Равшан Джамшутович</span>
+                </h2>
+                <button class="loggedin__close popover__close btn" type="button"><span
+                    class="visually-hidden">Закрыть.</span></button>
+                <ul class="loggedin-list list-reset">
+                  <li class="loggedin-item">
+                    <a class="loggedin-item__link link" href="#">мои заказы</a>
+                  </li>
+                  <li class="loggedin-item">
+                    <a class="loggedin-item__link link" href="#">личный кабинет</a>
+                  </li>
+                </ul>
+                <button class="loggedin__btn popover__btn btn" type="submit">выйти</button>
+              </div>
             </li>
             <li class="login-item">
               <a class="login-item__link link login-item__link-profile" href="#">Равшан Джамшутович</a>

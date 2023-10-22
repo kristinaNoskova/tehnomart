@@ -140,6 +140,12 @@ body {
 }
 
 .btn-green {
+	font-weight: 700;
+	text-align: center;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: #fff;
+	background-color: #63a63e;
 	transition: all 0.3s ease-in-out;
 }
 
@@ -327,6 +333,7 @@ body {
 }
 
 .unlogged {
+	position: relative;
 	display: block;
 }
 
@@ -407,6 +414,260 @@ body {
 	transform: rotate(-180deg);
 }
 
+/* Поповеры */
+.popover {
+	position: absolute;
+	z-index: 1;
+	right: 3px;
+	top: 0;
+	grid-template-columns: repeat(2, 147px);
+	column-gap: 5px;
+	width: 360px;
+	padding: 22px 29px 35px 31px;
+	border-radius: 2px;
+	background-color: #ffffff;
+	box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+.popover__title {
+	grid-column: 1/-1;
+	grid-row: 1;
+	max-width: 276px;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 30px;
+	text-transform: uppercase;
+	color: #000000;
+}
+
+.popover__close {
+	position: absolute;
+	top: 0;
+	right: 19px;
+	grid-column: 2;
+	grid-row: 1;
+	justify-self: end;
+	align-self: start;
+	padding: 0;
+}
+
+.popover__close::before {
+	content: '';
+	display: block;
+	width: 20px;
+	height: 20px;
+	mask: url('../images/icons/icon/close.svg') no-repeat center center 20px;
+	mask-size: 20px;
+	-webkit-mask: url('../images/icons/icon/close.svg') no-repeat center center;
+	-webkit-mask-size: 20px;
+	background-color: #c4c4c4;
+	transition: all 0.3s ease-in-out;
+}
+
+.popover__close:hover:before {
+	background-color: #000000;
+}
+
+.popover__close:active:before {
+	background-color: #656464;
+}
+
+.popover__btn {
+	padding: 8px 9px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-align: center;
+	border-radius: 2px;
+	border: 2px solid var(--Basic-green, #63a63e);
+	color: #32425c;
+	transition: all 0.3s ease-in-out;
+}
+
+.popover__btn:hover {
+	border-color: #3d546f;
+}
+
+.popover__btn:active {
+	border-color: #c5c5c5;
+	color: #c5c5c5;
+}
+
+.popover__btn:disabled {
+	opacity: 0.3;
+	pointer-events: none;
+}
+
+.login {
+	display: none;
+}
+
+.login__title {
+	margin-bottom: 46px;
+}
+
+.login__btn {
+	padding: 11px;
+	padding-left: 33px;
+	background: #63a63e url('../images/icons/icon/login.svg') no-repeat center left 25px;
+	background-size: 15px;
+	transform: translateX(-5px);
+}
+
+.login__input {
+	padding: 8px 14px;
+	border-radius: 2px;
+	border: 1px solid #c5c5c5;
+	background-color: #ffffff;
+	transition: all 0.3s ease-in-out;
+}
+
+.login__input:focus {
+	border-color: #63a63e;
+	outline: 1px solid #ffbf47;
+}
+
+.login__input:hover {
+	border-color: #63a63e;
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+.login__input:disabled {
+	color: #808080;
+	background: rgba(241, 245, 247, 0.5);
+}
+
+.login__input::placeholder {
+	color: #000000;
+}
+
+.login__input-email {
+	grid-column: 1 / -1;
+	grid-row: 2;
+	margin-bottom: 5px;
+}
+
+.login__input-password {
+	grid-column: 1 / -1;
+	grid-row: 3;
+	margin-bottom: 10px;
+}
+
+.login-remember {
+	grid-column: 1;
+	grid-row: 4;
+	display: flex;
+	align-items: center;
+	margin-bottom: 38px;
+}
+
+.login-remember__mark {
+	display: block;
+	margin-right: 18px;
+	width: 21px;
+	height: 21px;
+	border: 2px solid #3d546f;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+.login-remember__input:checked + .login-remember__mark {
+	background: url('../images/icons/icon/check.svg') no-repeat center center;
+}
+
+.login-remember__input:focus + .login-remember__mark {
+	outline: 2px solid #63a63e;
+}
+
+.login-remember__input:focus:not(:focus-visible) + .login-remember__mark {
+	outline: none;
+}
+
+.login-remember__input:focus-visible + .login-remember__mark {
+	outline: 2px solid #63a63e;
+}
+
+.login-remember__input:hover + .login-remember__mark {
+	opacity: 0.6;
+}
+
+.login-remember__input:active + .login-remember__mark {
+	opacity: 0.8;
+}
+
+.login-remember__input:disabled + .login-remember__mark {
+	opacity: 0.2;
+}
+
+.login-remember__input:disabled ~ .control__label {
+	opacity: 0.4;
+}
+
+.link-password {
+	grid-column: 2;
+	grid-row: 4;
+	align-self: start;
+	padding-left: 9px;
+	transition: all 0.3s ease-in-out;
+}
+
+.link-password:hover {
+	opacity: 0.6;
+}
+
+.link-password:active {
+	opacity: 0.3;
+}
+
+.link-registration {
+	grid-column: 2;
+	grid-row: 5;
+	transform: translateX(-8px);
+}
+
+.loggedin {
+	display: none;
+}
+
+.loggedin__title {
+	margin-bottom: 33px;
+}
+
+.loggedin-list {
+	grid-column: 1 / -1;
+	grid-row: 2;
+	margin-bottom: 22px;
+}
+
+.loggedin-item:not(:last-child) {
+	margin-bottom: 23px;
+}
+
+.loggedin-item__link {
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: #3d546f;
+	transition: all 0.3s ease-in-out;
+}
+
+.loggedin-item__link:hover {
+	color: #000000;
+}
+
+.loggedin-item__link:active {
+	opacity: 0.3;
+}
+
+.loggedin__btn {
+	grid-column: 1\-1;
+	grid-row: 3;
+}
+
+.popover-active {
+	display: grid;
+}
+
 .header-bottom {
 	background-color: #3d546f;
 }
@@ -461,7 +722,6 @@ body {
 	color: #c5c5c5;
 }
 
-/* подумать чтоб текст не скакал */
 .nav-menu__link:active {
 	font-weight: 700;
 	color: #ffffff;
@@ -532,13 +792,7 @@ body {
 .nav-bar__link-order {
 	width: 170px;
 	padding: 12px 10px;
-	letter-spacing: 2px;
-	text-transform: uppercase;
-	font-weight: 700;
-	text-align: center;
-	color: #fff;
 	border-radius: 4px;
-	background-color: #63a63e;
 }
 
 .nav-bar__link-order:hover {
@@ -954,11 +1208,11 @@ body {
 	outline: 2px solid #63a63e;
 }
 
-.control__input:hover + .control__mark {
+.control__input:hover:not([type='radio']) + .control__mark {
 	opacity: 0.6;
 }
 
-.control__input:active + .control__mark {
+.control__input:active:not([type='radio']) + .control__mark {
 	opacity: 0.8;
 }
 
@@ -967,10 +1221,6 @@ body {
 }
 
 .control__input:disabled ~ .control__label {
-	opacity: 0.4;
-}
-
-.control__input[type='radio']:disabled ~ .control__label {
 	opacity: 0.4;
 }
 
@@ -1163,7 +1413,6 @@ body {
 	margin-bottom: 11px;
 	background: #63a63e url('../images/icons/icon/cart.svg') no-repeat center left 23px;
 	background-size: 14px;
-	color: #ffffff;
 }
 
 .product-item__favorites {
