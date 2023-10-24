@@ -10,16 +10,19 @@
 </head>
 
 <body>
+  <!-- header -->
   <header class="header">
     <div class="header-top">
       <div class="page-container">
         <p class="header-top__descr descr">
           Интернет-магазин строительных материалов и инструментов для ремонта
         </p>
-        <address class="header-top__address">
-          г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8
+        <div class="address-wrapper">
+          <address class="header-top__address">
+            г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8
+          </address>
           <a class="header-top__link link" href="tel:+78125550555">+7 (812) 555-05-55</a>
-        </address>
+        </div>
       </div>
     </div>
     <nav class="nav">
@@ -43,7 +46,7 @@
             <button class="visually-hidden" type="submit">Найти.</button>
           </form>
           <ul class="login-list list-reset">
-            <!-- Чтобы появился блок авторизованного пользователя, необходимо пунктам добавить класс logged и убрать класс unlogged-->
+            <!-- Чтобы появился блок авторизованного пользователя, необходимо первому пункту списка добавить класс unlogged и убрать у других класс  logged-->
             <li class="login-item unlogged">
               <a class="login-item__link link login-item__link-entry" href="#">Войти</a>
               <!-- чтобы появился поповер авторизации, нужно добавить класс popover-active-->
@@ -53,8 +56,12 @@
                   <span class="visually-hidden">Закрыть.</span>
                 </button>
                 <label class="visually-hidden" for="login-mail">Введите логин.</label>
-                <input class="login__input login__input-email input" type="email" name="email" id="login-mail"
-                  placeholder="Логин" required>
+                <span class="login__invalid login__email">
+                  <!-- если инпуту почты добавить класс login__invalid-input появится сообщение об ошибке -->
+                  <input class="login__input login__input-email input" type="email" name="email" id="login-mail"
+                    placeholder="Логин" required>
+                  <span class="login__invalid-span">Неккоректный email</span>
+                </span>
                 <label class="visually-hidden" for="login-password">Введите пароль.</label>
                 <input class="login__input login__input-password input" type="password" name="password"
                   id="login-password" placeholder="Пароль" required>
@@ -69,12 +76,12 @@
                 <a class="login__link link-registration  popover__btn link" href="#">Регистрация</a>
               </form>
               <!-- чтобы появился поповер авторизованного пользователя, нужно добавить класс popover-active-->
-              <div class="loggedin popover popover-active">
+              <div class="loggedin popover">
                 <h2 class="loggedin__title popover__title title">Здравствуйте,<br>
                   <span class="loggedin__name">Равшан Джамшутович</span>
                 </h2>
-                <button class="loggedin__close popover__close btn" type="button"><span
-                    class="visually-hidden">Закрыть.</span></button>
+                <button class="loggedin__close popover__close btn" type="button">
+                  <span class="visually-hidden">Закрыть.</span></button>
                 <ul class="loggedin-list list-reset">
                   <li class="loggedin-item">
                     <a class="loggedin-item__link link" href="#">мои заказы</a>
@@ -83,7 +90,7 @@
                     <a class="loggedin-item__link link" href="#">личный кабинет</a>
                   </li>
                 </ul>
-                <button class="loggedin__btn popover__btn btn" type="submit">выйти</button>
+                <button class="loggedin__btn popover__btn btn" type="button">выйти</button>
               </div>
             </li>
             <li class="login-item">
@@ -159,6 +166,7 @@
   </header>
   <main class="main">
     <h1 class="visually-hidden">Интернет-магазин строительных материалов и инструментов для ремонта Техномарт.</h1>
+    <!-- promo -->
     <section class="promo">
       <h2 class="visually-hidden">Наши предложения.</h2>
       <div class="page-container">
@@ -226,11 +234,13 @@
         </ul>
       </div>
     </section>
+    <!-- catalog -->
     <section class="catalog">
       <div class="page-container">
         <h2 class="catalog__title section-title title">
           Перфораторы
         </h2>
+        <!-- filter -->
         <form class="filter" action="https://echo.htmlacademy.ru/" method="get">
           <fieldset class="filter-group filter-group__price">
             <legend class="filter-group__title">Цена</legend>
@@ -247,11 +257,11 @@
               </div>
             </div>
             <div class="range-wrapper-inputs">
-              <label class="range__label visually-hidden" for="min-price">от</label>
+              <label class="range__label visually-hidden" for="min-price">от.</label>
               <input class="range__input range__input-min input input-number" id="min-price" type="number"
                 name="min-price" placeholder="0" value="0">
               -
-              <label class="range__label visually-hidden" for="max-price">до</label>
+              <label class="range__label visually-hidden" for="max-price">до.</label>
               <input class="range__input input range__input-max input-number" id="max-price" type="number"
                 name="max-price" placeholder="3000" value="30000">
             </div>
@@ -319,6 +329,7 @@
           </fieldset>
           <button class="filter-button btn" type="submit">Показать</button>
         </form>
+        <!-- catalog-prroduct -->
         <div class="catalog-wrapper">
           <div class="select-control-arrow">
             <select class="select-control" aria-label="Сортировка">
@@ -468,6 +479,7 @@
         </div>
       </div>
     </section>
+    <!-- services -->
     <section class="services">
       <div class="page-container">
         <h2 class="services__title section-title title">Сервисы</h2>
@@ -499,6 +511,7 @@
     </section>
     <div class="page-container">
       <div class="sections-wrapper">
+        <!-- about-company -->
         <section class="about-company">
           <h2 class="about-company__title section-title title">КОМПАНИЯ «Техномарт»</h2>
           <p class="about-company__descr descr">Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для
@@ -508,6 +521,7 @@
             Техномарт работает со многими транспортными компаниями:</p>
           <a class="about-company__link link btn-red" href="#">о компании</a>
         </section>
+        <!-- contacts -->
         <section class="contacts">
           <h2 class="contacts__title section-title title">КОНТАКТЫ</h2>
           <p class="contacts__descr descr">Вы можете забрать товар сами, заехав в наш офис:</p>
@@ -519,17 +533,18 @@
       </div>
     </div>
   </main>
+  <!-- footer -->
   <footer class="footer">
     <div class="page-container">
       <div class="footer-wrapper-left">
         <a class="logo-footer" href="#">
-          <img class="logo-footer-img" src="images/icons/icon/footer-logo.svg" width="220" height="56"
+          <img class="logo-footer-img" src="images/icons/footer-logo.svg" width="220" height="56"
             alt="Логотип интернет-магазина Техномарт.">
         </a>
-        <address class="footer-address">
-          г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>
-          <a class="footer-address__link link" href="tel:+78125550555">+7 (812) 555-05-55</a>
+        <address class="footer__address">
+          г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8
         </address>
+        <a class="footer__link-address link" href="tel:+78125550555">+7 (812) 555-05-55</a>
         <ul class="social-list list-reset">
           <li class="social-item">
             <a class="social-link social-link-pin" href="#">
@@ -556,7 +571,7 @@
         <form class="subscribe" action="https://echo.htmlacademy.ru/" method="get">
           <label class="subscribe__label" for="subscribe">Получайте лучшие предложения</label>
           <div class="subscribe-wrapper">
-            <input class="subscribe__input input" type="email" name="subscribe" id="subscribe"
+            <input class="subscribe__input subscribe-invalid input" type="email" name="subscribe" id="subscribe"
               placeholder="email@example.com" required>
             <button class="subscribe__btn btn-green btn" type="submit">
               <span class="visually-hidden">Подписаться на рассылку.</span>
@@ -575,6 +590,7 @@
       </div>
     </div>
   </footer>
+  <script src="scripts/main.js"></script>
 </body>
 
 </html>
